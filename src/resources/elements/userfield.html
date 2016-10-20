@@ -1,0 +1,6 @@
+<template>
+  <span show.bind="loading"><i class="fa fa-spinner fa-spin fa-fw"></i></span>
+  <span if.bind="!loading && user">${user.fullName} (${user.alias})</span>
+  <span show.bind="!loading && !user" class="text-danger"><i class="fa fa-bolt"></i></span>
+  <button type="button" class="btn btn-secondary btn-sm" disabled.bind="readonly"><i class="fa fa-user"></i></button>
+</template>

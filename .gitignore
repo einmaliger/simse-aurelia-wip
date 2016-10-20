@@ -1,0 +1,15 @@
+.idea
+.DS_STORE
+
+node_modules/
+
+# The scripts directory contains the built packages,
+# so we shouldn't have to include it in git.
+# However, it seems that some files (require.js, text.js)
+# are not built by the script, so right now we exclude
+# the unneeded files one by one.
+scripts/css/
+scripts/fonts/
+scripts/app-bundle*
+scripts/app-bundle.js.map
+scripts/vendor-bundle.js

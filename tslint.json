@@ -1,0 +1,121 @@
+{
+	"extends": "tslint:recommended",
+  "rules": {
+    // This enabled pretty much every tslint rule, but takes into account
+    // most of the style decisions used in the aurelia_project directory
+    // (marked with the comment "Required for Aurela")
+    // as well as some personal preferences.
+    //
+    // Note: There have been some minor changes to aurelia_project to make
+    // it pass these rules
+    //
+    // Note 2:
+    // typeinfo is too much of a hassle atm, so rules that require this are
+    // commented out
+    
+    "adjacent-overload-signatures": true,
+    "member-access": false, // Required for Aurelia
+    "member-ordering": [true, { "order": "fields-first"}], 
+    "no-any": true,
+    "no-inferrable-types": false, // Don't see how this helps
+    "no-internal-module": true,
+    "no-namespace": true,
+    "no-reference": true,
+    "no-var-requires": true,
+    "only-arrow-functions": false,  // I don't see why this leads to cleaner code
+
+    "typedef": false, // Required for Aurelia; also, we don't need typedefs everywhere
+    "typedef-whitespace": // Exactly the official example
+    [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
+    ],
+
+    "curly": true,
+    "forin": true,
+    "label-position": true,
+    "no-arg": true,
+    "no-bitwise": true,       // explicitly disabnle when needed
+    "no-conditional-assignment": true,
+    "no-console": false,      // Required for aurelia
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-key": true,
+    "no-duplicate-variable": true,
+    "no-empty": true,
+    "no-eval": true,
+    // "no-for-in-array": true,      requires type info
+    "no-invalid-this": [true, "check-function-in-method"],
+    "no-null-keyword": true,
+    "no-shadowed-variable": true,
+    "no-string-literal": true,
+    "no-switch-case-fall-through": true,
+    "no-unreachable": true,
+    "no-unsafe-finally": true,
+    "no-unused-expression": true,
+    "no-unused-new": true,
+    "no-unused-variable": [true, "check-parameters"],
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "radix": true,
+    // "restrict-plus-operands": true,   requires type info
+    "switch-default": true,
+    "triple-equals": true,
+    "use-isnan": true,
+
+    // Maintainability
+    "eofline": true,
+    "indent": true,
+    "linebreak-style": false, // Will be inconsistent since git converts to crlf on win32
+    "max-file-line-count": [true, 300],
+    "max-line-length": [true, 100],   // 100 is sufficient for Aurelia
+    "no-default-export": false, // Required for Aurelia
+    "no-mergeable-namespace": true,
+    "no-require-imports": true,
+    "no-trailing-whitespace": true,
+    "object-literal-sort-keys": false,  // Prefering to order by semantics
+    "trailing-comma": false,  // Required for Aurelia
+
+    // Style
+    "align": [true, "parameters", "statements"], // Don't align arguments
+    "arrow-parens": false, // I don't see any danger in wirting f => ...
+    "class-name": true,
+    "comment-format": [true, "check-space"],
+    "file-header": false,  // Not required for MIT license
+
+    // Interfaces should NOT begin with an 'I'
+    // 1. I want to be able to change from Interface to Class when it
+    //    is sufficiently complex
+    // 2. Hungarian notation is always bad    
+    "interface-name": [true, "never-prefix"],
+
+    "jsdoc-format": true,  // In case I every starting using jsdoc
+    "new-parens": true,    // Not sure about this one
+    "no-angle-bracket-type-assertion": false, // I happen to like <T>
+    "no-consecutive-blank-lines": true,
+    "no-constructor-vars": false,
+    "object-literal-key-quotes": false, // Sometimes quotes are more readable, sometimes not
+    "object-literal-shorthand": true,
+    "one-line": [true, "check-catch", "check-finally", "check-else", "check-open-brace", "check-whitespace"],
+    "one-variable-per-declaration": true,
+    "ordered-imports": false,
+    "quotemark": [true, "single", "avoid-escape"], // Required for Aurelia
+    "semicolon": false, // Required for Aurelia
+    "variable-name": [true, "check-format", "ban-keywords"],
+    "whitespace": [true, "check-branch", "check-decl", "check-operator",
+      "check-module", "check-separator", "check-type", "check-typecast"]
+  }
+}
