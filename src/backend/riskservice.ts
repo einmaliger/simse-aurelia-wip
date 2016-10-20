@@ -22,8 +22,8 @@ let sampleRisks: Array<Risk> =
    'the MAOSID protocol. The data sometimes contains control instructions for the production ' +
    'machines. While the MAOSID protocol is considered secure, it does not appear to be suited ' +
    'for control instructions in this specific encoded form, because \n\n' +
-   '* The input data partially comes from an untrusted source. This is mitigated by inspecting it ' +
-   'automatically and doing various sanity checks.\n' +
+   '* The input data partially comes from an untrusted source. This is mitigated by inspecting ' +
+   'it automatically and doing various sanity checks.\n' +
    '* Control instruction are specific to the machine that they are made for, so they cannot ' +
    'generally be inspected to find integrity errors.\n' +
    '* Although no specific attack vector is know, the possibility cannot be precluded.\n' +
