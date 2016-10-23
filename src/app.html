@@ -28,6 +28,13 @@
             <user-field id.bind="risk.owner" readonly.bind="viewmode"></user-field>
           </div>
         </div>
+
+        <div class="form-group row">
+          <label for="risk-weakness" class="col-form-label col-sm-2">Weakness:</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" name="risk-weakness" placeholder="Security gap that causes the risk" value.bind="risk.weakness" readonly.bind="viewmode"></textarea>
+          </div>
+        </div>
   		</fieldset>
   	</form>
 	</div>
