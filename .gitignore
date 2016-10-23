@@ -2,6 +2,7 @@
 .DS_STORE
 
 node_modules/
+yarn.lock
 
 # The scripts directory contains the built packages,
 # so we shouldn't have to include it in git.
