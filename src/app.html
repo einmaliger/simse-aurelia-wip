@@ -1,41 +1,7 @@
 <template>
 	<require from="bootstrap/css/bootstrap.css"></require>
-  <require from="./resources/elements/userfield"></require>
 
-	<div class="container">
-	  <form>
-    	<h2>Risk ${risk.id}</h2>
-  		<fieldset>
-	  		<legend class="form-legend">Base Data</legend>
-
-	  		<div class="form-group row">
-  				<label for="risk-title" class="col-form-label col-sm-2">Title:</label>
-  				<div class="col-sm-10">
-	  				<input type="text" class="form-control" name="risk-title" min="3" placeholder="Short description of the risk" value.bind="risk.title" required readonly.bind="viewmode">
-  				</div>
-  			</div>
-
-  			<div class="form-group row">
-	  			<label for="risk-desc" class="col-form-label col-sm-2">Description:</label>
-  				<div class="col-sm-10">
-	  				<textarea class="form-control" name="risk-desc" placeholder="Summary of the risk" value.bind="risk.summary" readonly.bind="viewmode"></textarea>
-  				</div>
-  			</div>
-
-        <div class="form-group row">
-          <label for="risk-owner" class="col-form-label col-sm-2">Owner:</label>
-          <div class="col-sm-10">
-            <user-field id.bind="risk.owner" readonly.bind="viewmode"></user-field>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="risk-weakness" class="col-form-label col-sm-2">Weakness:</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" name="risk-weakness" placeholder="Security gap that causes the risk" value.bind="risk.weakness" readonly.bind="viewmode"></textarea>
-          </div>
-        </div>
-  		</fieldset>
-  	</form>
-	</div>
+  <div class="container">
+    <router-view></router-view>
+  </div>
 </template>

@@ -1,40 +1,15 @@
-import {autoinject, computedFrom} from 'aurelia-framework';
-import {Risk, RiskService} from './backend/riskservice';
+import {Router, RouterConfiguration} from 'aurelia-router';
 
-enum Modes {
-  View,
-  Edit
-}
-
-@autoinject
 export class App {
-  mode: Modes;
-  risk: Risk;
-  loading: boolean = true;
+  router: Router;
 
-  constructor(private riskService: RiskService) {
-    this.mode = Modes.View;
-  }
+  configureRouter(config: RouterConfiguration, router: Router) {
+    config.title = 'SimSe';
+    config.map([
+      { route: ['', 'dashboard'], moduleId: 'dashboard' },
+      { route: 'risk/:id', moduleId: 'risk-form', name: 'risk-form' }
+    ]);
 
-  created() {
-    this.loadRisk();
-  }
-
-  loadRisk() {
-    this.loading = true;
-    this.riskService.get(1).then((risk: Risk) => {
-      this.risk = risk;
-      this.loading = false;
-    });
-  }
-
-  @computedFrom('mode')
-  get viewmode() {
-    return this.mode === Modes.View;
-  }
-
-  @computedFrom('risk')
-  get riskOwner() {
-    return 'Scott Meyer';
+    this.router = router;
   }
 }

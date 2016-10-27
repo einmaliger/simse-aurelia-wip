@@ -31,10 +31,11 @@ let sampleRisks: Array<Risk> =
 ]
 
 export class RiskService {
-  get(id: number) {
+  get(id: number): Promise<Risk> {
     return new Promise(resolve => {
       setTimeout(() => {
-        resolve(sampleRisks.find(x => x.id === id));
+        // tslint:disable-next-line:triple-equals
+        resolve(sampleRisks.find(x => x.id == id));
        }, 200)
       }
     )
